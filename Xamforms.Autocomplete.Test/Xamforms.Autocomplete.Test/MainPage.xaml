@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:views="clr-namespace:XamForms.Controls;assembly=XamForms"
              xmlns:vm="clr-namespace:Xamforms.Autocomplete.Test.ViewModels"
+             xmlns:templates="clr-namespace:Xamforms.Autocomplete.Test.Templates"
              x:Class="Xamforms.Autocomplete.Test.MainPage">
 
     <ContentPage.BindingContext>
@@ -14,6 +15,14 @@
                         SearchCommand="{Binding SerchCommand}"
                         SelectedItemCommand="{Binding SelectItemCommand}"
                         SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
-                        Padding="10"/>
+                        Padding="10">
+        
+        <views:AutoComplete.ItemTemplate>
+            <DataTemplate>
+                <templates:CustomAutocompleteTemplate/>
+            </DataTemplate>
+        </views:AutoComplete.ItemTemplate>
+        
+    </views:AutoComplete>
 
 </ContentPage>
