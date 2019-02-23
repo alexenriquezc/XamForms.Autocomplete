@@ -65,10 +65,13 @@ namespace Xamforms.Autocomplete.Test.ViewModels
             {
                 return new Command((o) =>
                 {
-                    App.Current.MainPage.DisplayAlert("Test", $"You have selected {SelectedItem} item", "Ok");
+                    if(SelectedItem != null)
+                    {
+                        App.Current.MainPage.DisplayAlert("Test", $"You have selected {SelectedItem} item", "Ok");
 
-                    // this deselects the item in the list.
-                    SelectedItem = null;
+                        // this deselects the item in the list.
+                        SelectedItem = null;
+                    }
                 });
             }
         }
