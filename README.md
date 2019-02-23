@@ -128,3 +128,6 @@ The autocomplete supports collection of objects, if you want to display a custom
 And then the result is:
 
 ![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/4.jpg "Logo Title Text 1")
+
+
+# **PD: You can change the style of textbox using renderers in each platform, you should use EntryRenderer**
