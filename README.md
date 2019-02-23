@@ -105,3 +105,23 @@ public class MainViewModel : ViewModel
 ![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/1.jpg "Logo Title Text 1")
 ![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/2.jpg "Logo Title Text 1")
 ![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/3.jpg "Logo Title Text 1")
+
+The autocomplete supports collection of objects, if you want to display a custom style of items you can use Templates like this
+
+``` xAML
+<views:AutoComplete Text="{Binding Text}"
+                        ItemsSource="{Binding Items}"
+                        SearchCommand="{Binding SerchCommand}"
+                        SelectedItemCommand="{Binding SelectItemCommand}"
+                        SelectedItem="{Binding SelectedItem, Mode=TwoWay}"
+                        Padding="10">
+        
+        <views:AutoComplete.ItemTemplate>
+            <DataTemplate>
+                <templates:CustomAutocompleteTemplate/>
+            </DataTemplate>
+        </views:AutoComplete.ItemTemplate>        
+    </views:AutoComplete>
+```
+And then the result is 
+![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/4.jpg "Logo Title Text 1")
