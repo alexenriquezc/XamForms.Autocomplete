@@ -1,6 +1,8 @@
 # XamForms.Autocomplete
 Xamarin forms bindable autocomplete control
 
+[XamForms.Autocomplete nuget](https://www.nuget.org/packages/XamForms.Autocomplete/1.0.0)
+
 Example
 
 # XAML
@@ -99,3 +101,7 @@ public class MainViewModel : ViewModel
         }
     }
 ```
+
+![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/1.jpg "Logo Title Text 1")
+![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/2.jpg "Logo Title Text 1")
+![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/3.jpg "Logo Title Text 1")
