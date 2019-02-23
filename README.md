@@ -102,7 +102,7 @@ public class MainViewModel : ViewModel
     }
 ```
 
-![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/1.jpg "Logo Title Text 1")
+![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/1.jpg =168x215"Logo Title Text 1")
 ![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/2.jpg "Logo Title Text 1")
 ![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/3.jpg "Logo Title Text 1")
 
