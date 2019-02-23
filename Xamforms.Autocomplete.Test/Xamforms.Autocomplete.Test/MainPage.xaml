@@ -21,8 +21,6 @@
             <DataTemplate>
                 <templates:CustomAutocompleteTemplate/>
             </DataTemplate>
-        </views:AutoComplete.ItemTemplate>
-        
+        </views:AutoComplete.ItemTemplate>        
     </views:AutoComplete>
-
 </ContentPage>
