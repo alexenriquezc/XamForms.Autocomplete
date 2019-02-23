@@ -4,11 +4,16 @@
              xmlns:views="clr-namespace:XamForms.Controls;assembly=XamForms"
              xmlns:vm="clr-namespace:Xamforms.Autocomplete.Test.ViewModels"
              xmlns:templates="clr-namespace:Xamforms.Autocomplete.Test.Templates"
+             xmlns:behaviors="clr-namespace:Behaviors.Utils;assembly=Behaviors.Utils"
              x:Class="Xamforms.Autocomplete.Test.MainPage">
 
     <ContentPage.BindingContext>
         <vm:MainViewModel/>
     </ContentPage.BindingContext>
+
+    <ContentPage.Behaviors>
+        <behaviors:EventToCommand EventName="Appearing" Command="{Binding OnAppear}"/>
+    </ContentPage.Behaviors>
 
     <views:AutoComplete Text="{Binding Text}"
                         ItemsSource="{Binding Items}"

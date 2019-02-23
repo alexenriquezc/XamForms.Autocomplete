@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using Collection.Utils;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -7,8 +8,9 @@ namespace Xamforms.Autocomplete.Test.ViewModels
 {
     public class MainViewModel : ViewModel
     {
-        ObservableCollection<string> _items;
-        public ObservableCollection<string> Items
+        #region  Properties
+        FastObservableCollection<string> _items;
+        public FastObservableCollection<string> Items
         {
             get => _items;
             set { _items = value; OnPropertyChanged(); }
@@ -28,20 +30,36 @@ namespace Xamforms.Autocomplete.Test.ViewModels
             set { _selectedItem = value; OnPropertyChanged(); }
         }
 
-        ObservableCollection<string> dataSource;
+        List<string> dataSource;
 
+        #endregion
+
+        #region Ctr
         public MainViewModel()
         {
-            Items = new ObservableCollection<string>();
+            Items = new FastObservableCollection<string>();
 
             // This simulates a data source that can be obtained by web service or read from database.
             // It is advisable
-            dataSource = new ObservableCollection<string>();
+            dataSource = new List<string>();
             dataSource.Add("A");
             dataSource.Add("B");
             dataSource.Add("C");
             dataSource.Add("D");
             dataSource.Add("E");
+        }
+        #endregion
+
+        #region Commands
+        public ICommand OnAppear
+        {
+            get
+            {
+                return new Command((o) =>
+                {
+                    LoadItems();
+                });
+            }
         }
 
         public ICommand SerchCommand
@@ -52,9 +70,9 @@ namespace Xamforms.Autocomplete.Test.ViewModels
                 {
                     Items.Clear();
                     if (!string.IsNullOrEmpty(Text))
-                        Items = new ObservableCollection<string>(dataSource.Where(x => x == Text.ToLower() || x == Text.ToUpper()));
+                        Items.AddRange(dataSource.Where(x => x == Text.ToLower() || x == Text.ToUpper()));
                     else
-                        Items = dataSource;
+                        Items.AddRange(dataSource);
                 });
             }
         }
@@ -65,7 +83,7 @@ namespace Xamforms.Autocomplete.Test.ViewModels
             {
                 return new Command((o) =>
                 {
-                    if(SelectedItem != null)
+                    if (SelectedItem != null)
                     {
                         App.Current.MainPage.DisplayAlert("Test", $"You have selected {SelectedItem} item", "Ok");
 
@@ -75,5 +93,14 @@ namespace Xamforms.Autocomplete.Test.ViewModels
                 });
             }
         }
+        #endregion
+
+        #region Methods
+        void LoadItems()
+        {
+            Items.Clear();
+            Items.AddRange(dataSource);
+        }
+        #endregion
     }
 }
