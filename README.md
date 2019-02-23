@@ -103,7 +103,9 @@ public class MainViewModel : ViewModel
 ```
 
 ![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/1.jpg "Logo Title Text 1")
+
 ![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/2.jpg "Logo Title Text 1")
+
 ![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/3.jpg "Logo Title Text 1")
 
 The autocomplete supports collection of objects, if you want to display a custom style of items you can use Templates like this
@@ -123,5 +125,6 @@ The autocomplete supports collection of objects, if you want to display a custom
         </views:AutoComplete.ItemTemplate>        
     </views:AutoComplete>
 ```
-And then the result is 
+And then the result is:
+
 ![alt text](https://github.com/alexenriquezc/XamForms.Autocomplete/blob/master/screenshots/4.jpg "Logo Title Text 1")
